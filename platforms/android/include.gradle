@@ -1,0 +1,14 @@
+android {
+    productFlavors {
+        "nativescriptcolorslider" {
+            dimension "nativescriptcolorslider"
+        }
+    }
+}
+repositories {
+        maven { url "https://jitpack.io" }
+    }
+
+    dependencies {
+   compile 'com.github.rtugeek:ColorSeekBar:1.0.2'
+}

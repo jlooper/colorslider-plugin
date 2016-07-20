@@ -1,4 +1,3 @@
-//import {Common} from './colorslider.common';
 import {topmost} from 'ui/frame';
 
 declare var CGRectMake: any;

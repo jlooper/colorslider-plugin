@@ -1,5 +1,20 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
-  <StackLayout>
-    <Label text="{{ message }}" class="message" textWrap="true"/>
-  </StackLayout>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" xmlns:slider="nativescript-colorslider">
+  <StackLayout>  
+<slider:ColorSlider max="150" colors="{{colorList}}" showAlphaBar="{{showAlphaBar}}" colorChange="colorChange" alphaBar="{{alphaBar}}" barHeight="{{barHeight}}" thumbHeight="{{thumbHeight}}"/>
+<StackLayout>
+<StackLayout orientation="horizontal">
+<Switch checked="{{ showAlphaBar }}" />
+<Label text="showAlphaBar"/>
+</StackLayout>
+<Slider value="{{ alphaBar }}" />
+</StackLayout>
+<StackLayout>
+<Label text="{{'barHeight:'+ barHeight}}"/>
+<Slider value="{{ barHeight }}" />
+</StackLayout>
+<StackLayout>
+<Label text="{{'thumbHeight:' + thumbHeight }}"/>
+<Slider value="{{ thumbHeight }}" />
+</StackLayout>
+</StackLayout>
 </Page>

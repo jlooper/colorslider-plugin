@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "removeComments": true,
+        "experimentalDecorators": true,
+        "sourceMap": true,
+        "emitDecoratorMetadata": true,
+        "noEmitHelpers": true,
+        "noEmitOnError": true
+    },
+    "files": [
+        "demo/node_modules/tns-core-modules/tns-core-modules.d.ts",
+        "colorslider.android.ts",
+        "colorslider.ios.ts"
+    ],
+    "compileOnSave": false
+}
