@@ -5,7 +5,15 @@ declare var Slider: any, UIApplication: any, CGRectMake: any;
 
 export class ColorSlider extends ContentView {
  
- private _ios: Slider;
+ private _ios: any = Slider;
+
+    get ios(): any {
+        return this._ios;
+    }
+
+    get _nativeView(): any {
+        return this._ios;
+    }
 
   constructor() {
     super();
