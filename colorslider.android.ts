@@ -3,9 +3,6 @@ import {PropertyMetadata} from "ui/core/proxy";
 import { ContentView } from "ui/content-view";
 import * as color from "color";
 
-
-
-
 function onShowAlphaBarPropertyChanged(data: PropertyChangeData) {
     var showAlphaBar = <ColorSlider>data.object;
     showAlphaBar._showAlphaUpdate(data.newValue ? data.newValue : null);
@@ -20,8 +17,6 @@ function onThumbHeightPropertyChanged(data: PropertyChangeData) {
     var thumbHeight = <ColorSlider>data.object;
     thumbHeight._thumbHeightUpdate(data.newValue ? data.newValue : null);
 }
-
-
 
 export class ColorSlider extends ContentView {
     private static maxProperty = new Property("max", "ColorSlider", new PropertyMetadata(undefined, PropertyMetadataSettings.None));

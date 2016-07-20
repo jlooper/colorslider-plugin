@@ -1,18 +1,15 @@
 import {topmost} from 'ui/frame';
+import {ContentView} from 'ui/content-view';
 
-declare var CGRectMake: any;
+declare var Slider: any, UIApplication: any, CGRectMake: any;
 
-export class ColorSlider {
-
- private _colorSlider: any;
+export class ColorSlider extends ContentView {
  
-  constructor(imageName: string, hexColor: string) {
-    this._colorSlider.frame = CGRectMake(0, 0, 12, 150);
-  }
+ private _ios: Slider;
 
-   
-  public initSlider() {
-    topmost().ios.controller.view.addSubview(this._colorSlider); 
-  }
-
+  constructor() {
+    super();
+    this._ios = new Slider(CGRectMake(0, 0, 12, 150));
+    topmost().ios.controller.view.addSubview(this._ios); 
+  }   
 }
