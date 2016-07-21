@@ -1,11 +1,18 @@
 import {topmost} from 'ui/frame';
 import {ContentView} from 'ui/content-view';
 
-declare var Slider: any, UIApplication: any, CGRectMake: any;
+/*
+will this work, as it's a swift cocoapod?
+let colorSlider = ColorSlider()
+colorSlider.frame = CGRectMake(0, 0, 12, 150)
+view.addSubview(colorSlider)
+*/
 
-export class ColorSlider extends ContentView {
+declare var ColorSlider: any, CGRectMake: any;
+
+export class Slider extends ContentView {
  
- private _ios: any = Slider;
+ private _ios: any = ColorSlider;
 
     get ios(): any {
         return this._ios;
@@ -17,7 +24,7 @@ export class ColorSlider extends ContentView {
 
   constructor() {
     super();
-    this._ios = new Slider(CGRectMake(0, 0, 12, 150));
-    topmost().ios.controller.view.addSubview(this._ios); 
+    this._ios.frame = ColorSlider.initWithFrame(CGRectMake(0, 0, 12, 150));
+    topmost().ios.controller.view.addSubview(ColorSlider); 
   }   
 }

@@ -1,6 +1,6 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" xmlns:slider="nativescript-colorslider">
   <StackLayout>  
-<slider:ColorSlider max="150" colors="{{colorList}}" showAlphaBar="{{showAlphaBar}}" colorChange="colorChange" alphaBar="{{alphaBar}}" barHeight="{{barHeight}}" thumbHeight="{{thumbHeight}}"/>
+<slider:Slider max="150" colors="{{colorList}}" showAlphaBar="{{showAlphaBar}}" colorChange="colorChange" alphaBar="{{alphaBar}}" barHeight="{{barHeight}}" thumbHeight="{{thumbHeight}}"/>
 <StackLayout>
 <StackLayout orientation="horizontal">
 <Switch checked="{{ showAlphaBar }}" />
