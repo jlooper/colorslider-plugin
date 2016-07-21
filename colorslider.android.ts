@@ -3,6 +3,8 @@ import {PropertyMetadata} from "ui/core/proxy";
 import { ContentView } from "ui/content-view";
 import * as color from "color";
 
+declare var com: any;
+
 function onShowAlphaBarPropertyChanged(data: PropertyChangeData) {
     var showAlphaBar = <ColorSlider>data.object;
     showAlphaBar._showAlphaUpdate(data.newValue ? data.newValue : null);
@@ -27,7 +29,7 @@ export class ColorSlider extends ContentView {
     private static barHeightProperty = new Property("barHeight", "ColorSlider", new PropertyMetadata(undefined, PropertyMetadataSettings.None, onBarHeightPropertyChanged));
     private static thumbHeightProperty = new Property("thumbHeight", "ColorSlider", new PropertyMetadata(undefined, PropertyMetadataSettings.None, onThumbHeightPropertyChanged));
     private static barMarginProperty = new Property("barMargin", "ColorSlider", new PropertyMetadata(undefined, PropertyMetadataSettings.None));
-    private _android: com.rtugeek.android.colorseekbar.ColorSeekBar;
+    private _android: any;
     public static colorChangeEvent = "colorChange";
     constructor() {
         super();

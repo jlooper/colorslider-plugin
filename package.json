@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "Color Slider - choose a color!",
     "main": "colorslider.js",
+    "typings": "colorslider.d.ts",
     "nativescript": {
         "platforms": {
             "android": "2.0.0",
