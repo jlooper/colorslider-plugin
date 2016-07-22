@@ -20,16 +20,20 @@ function onThumbHeightPropertyChanged(data: PropertyChangeData) {
     thumbHeight._thumbHeightUpdate(data.newValue ? data.newValue : null);
 }
 
+(<PropertyMetadata>ColorSlider.showAlphaBarProperty.metadata).onSetNativeValue = onShowAlphaBarPropertyChanged;
+(<PropertyMetadata>ColorSlider.barHeightProperty.metadata).onSetNativeValue = onBarHeightPropertyChanged;
+(<PropertyMetadata>ColorSlider.thumbHeightProperty.metadata).onSetNativeValue = onThumbHeightPropertyChanged;
+
 export class ColorSlider extends ContentView {
-    private static maxProperty = new Property("max", "ColorSlider", new PropertyMetadata(undefined, PropertyMetadataSettings.None));
-    private static colorsProperty = new Property("colors", "ColorSlider", new PropertyMetadata(undefined, PropertyMetadataSettings.None));
-    private static colorBarProperty = new Property("colorBar", "ColorSlider", new PropertyMetadata(undefined, PropertyMetadataSettings.None));
-    private static alphaBarProperty = new Property("alphaBar", "ColorSlider", new PropertyMetadata(undefined, PropertyMetadataSettings.None));
-    private static showAlphaBarProperty = new Property("showAlphaBar", "ColorSlider", new PropertyMetadata(undefined, PropertyMetadataSettings.None, onShowAlphaBarPropertyChanged));
-    private static barHeightProperty = new Property("barHeight", "ColorSlider", new PropertyMetadata(undefined, PropertyMetadataSettings.None, onBarHeightPropertyChanged));
-    private static thumbHeightProperty = new Property("thumbHeight", "ColorSlider", new PropertyMetadata(undefined, PropertyMetadataSettings.None, onThumbHeightPropertyChanged));
-    private static barMarginProperty = new Property("barMargin", "ColorSlider", new PropertyMetadata(undefined, PropertyMetadataSettings.None));
-    private _android: any;
+    public static maxProperty = new Property("max", "ColorSlider", new PropertyMetadata(undefined, PropertyMetadataSettings.None));
+    public static colorsProperty = new Property("colors", "ColorSlider", new PropertyMetadata(undefined, PropertyMetadataSettings.None));
+    public static colorBarProperty = new Property("colorBar", "ColorSlider", new PropertyMetadata(undefined, PropertyMetadataSettings.None));
+    public static alphaBarProperty = new Property("alphaBar", "ColorSlider", new PropertyMetadata(undefined, PropertyMetadataSettings.None));
+    public static showAlphaBarProperty = new Property("showAlphaBar", "ColorSlider", new PropertyMetadata(undefined, PropertyMetadataSettings.None, onShowAlphaBarPropertyChanged));
+    public static barHeightProperty = new Property("barHeight", "ColorSlider", new PropertyMetadata(undefined, PropertyMetadataSettings.None, onBarHeightPropertyChanged));
+    public static thumbHeightProperty = new Property("thumbHeight", "ColorSlider", new PropertyMetadata(undefined, PropertyMetadataSettings.None, onThumbHeightPropertyChanged));
+    public static barMarginProperty = new Property("barMargin", "ColorSlider", new PropertyMetadata(undefined, PropertyMetadataSettings.None));
+    public _android: any;
     public static colorChangeEvent = "colorChange";
     constructor() {
         super();
