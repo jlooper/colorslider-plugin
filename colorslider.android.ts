@@ -29,9 +29,9 @@ export class ColorSlider extends ContentView {
     public static colorsProperty = new Property("colors", "ColorSlider", new PropertyMetadata(undefined, PropertyMetadataSettings.None));
     public static colorBarProperty = new Property("colorBar", "ColorSlider", new PropertyMetadata(undefined, PropertyMetadataSettings.None));
     public static alphaBarProperty = new Property("alphaBar", "ColorSlider", new PropertyMetadata(undefined, PropertyMetadataSettings.None));
-    public static showAlphaBarProperty = new Property("showAlphaBar", "ColorSlider", new PropertyMetadata(undefined, PropertyMetadataSettings.None, onShowAlphaBarPropertyChanged));
-    public static barHeightProperty = new Property("barHeight", "ColorSlider", new PropertyMetadata(undefined, PropertyMetadataSettings.None, onBarHeightPropertyChanged));
-    public static thumbHeightProperty = new Property("thumbHeight", "ColorSlider", new PropertyMetadata(undefined, PropertyMetadataSettings.None, onThumbHeightPropertyChanged));
+    public static showAlphaBarProperty = new Property("showAlphaBar", "ColorSlider", new PropertyMetadata(undefined, PropertyMetadataSettings.None));
+    public static barHeightProperty = new Property("barHeight", "ColorSlider", new PropertyMetadata(undefined, PropertyMetadataSettings.None));
+    public static thumbHeightProperty = new Property("thumbHeight", "ColorSlider", new PropertyMetadata(undefined, PropertyMetadataSettings.None));
     public static barMarginProperty = new Property("barMargin", "ColorSlider", new PropertyMetadata(undefined, PropertyMetadataSettings.None));
     public _android: any;
     public static colorChangeEvent = "colorChange";
