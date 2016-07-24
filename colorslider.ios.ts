@@ -1,25 +1,30 @@
 import {topmost} from 'ui/frame';
 import {ContentView} from 'ui/content-view';
-import {Color} from "color";
+import {Color} from 'color';
 /*
 orientation: String;
     previewEnabled: Boolean;
     borderWidth: Number;
     borderColor: String;
     */
-declare var ColorSlider: any, CGRectMake: any;
+declare var ColorSlider: any, CGRectMake: any, UIControlEvents: any, interop: any;
 
 export class Slider extends ContentView {
- 
-  private _ios: any = ColorSlider;
 
-  public static colorChangeEvent = "changedColor";
-    
+  public static colorChangeEvent = 'changedColor';
+
+  private _ios: any = ColorSlider;
+  private _sliderHandler: NSObject;
+
   constructor() {
     super();
     this._ios = new ColorSlider();
     this._ios.frame = CGRectMake(0, 0, 12, 150);
-  }  
+
+    this._sliderHandler = SliderHandlerImpl.initWithOwner(new WeakRef(this));
+
+    this._ios.addTargetActionForControlEvents(this._sliderHandler, 'changedColor', UIControlEvents.UIControlEventValueChanged);
+  }
 
   get ios(): any {
     return this._ios;
@@ -27,8 +32,8 @@ export class Slider extends ContentView {
 
   get _nativeView(): any {
     return this._ios;
-  } 
-  
+  }
+
   set orientation(value: string) {
     this._ios.orientation = +value;
   }
@@ -41,5 +46,25 @@ export class Slider extends ContentView {
     this._ios.borderWidth = +value;
   }
 
-  
+}
+
+class SliderHandlerImpl extends NSObject {
+
+  private _owner: WeakRef<Slider>;
+
+  public static initWithOwner(owner: WeakRef<Slider>): SliderHandlerImpl {
+    let impl = <SliderHandlerImpl>SliderHandlerImpl.new();
+    impl._owner = owner;
+    return impl;
+  }
+
+  public changedColor(sender: any) {
+    let owner = this._owner.get();
+    console.log('Selected Color: ' + sender.color);
+  }
+
+  public static ObjCExposedMethods = {
+    'changedColor': { returns: interop.types.void, params: [ColorSlider] }
+  };
+
 }
