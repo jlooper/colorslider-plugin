@@ -32,6 +32,11 @@
             "name": "Osei Fortune",
             "email": "fortune.osei@yahoo.com",
             "url": "https://github.com/triniwiz"
+        },
+        {
+            "name": "Sean Perkins",
+            "email": "sean@meetmaestro.com",
+            "url": "https://github.com/sean-perkins"
         }
     ],
     "author": {
@@ -48,6 +53,7 @@
     "homepage": "https://github.com/jlooper/nativescript-colorslider",
     "readmeFilename": "README.md",
     "devDependencies": {
-        "typescript": "^1.8.10"
+        "typescript": "^1.8.10",
+        "tns-platform-declarations": "^2.0.0"
     }
 }
