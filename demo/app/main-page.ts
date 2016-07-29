@@ -14,4 +14,5 @@ export function colorChange(args) {
     console.log(args.colorBar)
     console.log(args.color)
     console.log(args.alphaBar)
+    console.log("ohai")
 }

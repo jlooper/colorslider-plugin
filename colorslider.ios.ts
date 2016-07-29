@@ -6,6 +6,8 @@ orientation: String;
     previewEnabled: Boolean;
     borderWidth: Number;
     borderColor: String;
+    width: Number;
+    height: Number;
     */
 declare var ColorSlider: any, CGRectMake: any, UIControlEvents: any, interop: any;
 
@@ -20,9 +22,7 @@ export class Slider extends ContentView {
     super();
     this._ios = new ColorSlider();
     this._ios.frame = CGRectMake(0, 0, 12, 150);
-
     this._sliderHandler = SliderHandlerImpl.initWithOwner(new WeakRef(this));
-
     this._ios.addTargetActionForControlEvents(this._sliderHandler, 'changedColor', UIControlEvents.UIControlEventValueChanged);
   }
 
@@ -58,13 +58,17 @@ class SliderHandlerImpl extends NSObject {
     return impl;
   }
 
+  
+
   public changedColor(sender: any) {
     let owner = this._owner.get();
     console.log('Selected Color: ' + sender.color);
+    owner.notify({ eventName: Slider.colorChangeEvent, object: owner, color: sender.color })
   }
 
+  
   public static ObjCExposedMethods = {
     'changedColor': { returns: interop.types.void, params: [ColorSlider] }
-  };
+  }
 
 }

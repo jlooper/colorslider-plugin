@@ -1,7 +1,7 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" xmlns:slider="nativescript-colorslider">
   <StackLayout width="100%">  
   <ios>
-    <slider:Slider orientation="{{orientation}}" borderWidth="{{borderWidth}}" previewEnabled="{{previewEnabled}}" width="12" height="150"/>
+    <slider:Slider orientation="{{orientation}}" borderWidth="{{borderWidth}}" previewEnabled="{{previewEnabled}}" width="{{width}}" height="{{height}}" colorChange="colorChange"/>
   </ios>
   <android>
     <slider:Slider max="150" colors="{{colorList}}" showAlphaBar="{{showAlphaBar}}" colorChange="colorChange" alphaBar="{{alphaBar}}" barHeight="{{barHeight}}" thumbHeight="{{thumbHeight}}"/>
